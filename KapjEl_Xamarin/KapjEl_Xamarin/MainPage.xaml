@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KapjEl_Xamarin.MainPage">
+
+    <StackLayout>
+        <Label Text="Kapj el!" HorizontalTextAlignment="Center" VerticalOptions="Start"
+               FontSize="Medium" FontAttributes="Bold" Margin="10"
+               x:Name="llCaption"
+               />
+        <AbsoluteLayout VerticalOptions="FillAndExpand" BackgroundColor="Cyan" x:Name="alPlayground">
+            <AbsoluteLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="alPlayground_Tapped" NumberOfTapsRequired="1"/>
+            </AbsoluteLayout.GestureRecognizers>
+            <ImageButton x:Name="ibCasper" AbsoluteLayout.LayoutBounds="200,200,50,50" Source="casper.png"
+                BackgroundColor="Cyan" Clicked="ibCasper_Clicked"/>
+        </AbsoluteLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Találatok: "/>
+            <Label Text="0" x:Name="llHits"/>
+            <Label Text="Mellé:"/>
+            <Label Text="0" x:Name="llMisses"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <Button x:Name="btStart" Text="Start" HorizontalOptions="Start" Clicked="btStart_Clicked"/>
+            <Label HorizontalOptions="FillAndExpand"/>
+            <Button x:Name="btReset" Text="Reset" HorizontalOptions="Center" Clicked="btReset_Clicked"/>
+            <Label HorizontalOptions="FillAndExpand"/>
+            <Button x:Name="btStop" Text="Stop" HorizontalOptions="End" Clicked="btStop_Clicked"/>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
